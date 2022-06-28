@@ -11,6 +11,7 @@ const DivFrase = styled.div`
     }
 
     h1{
+        font-size: 1.5rem;
         font-family: Arial, Helvetica, sans-serif;
         text-align: center;
         position: relative;
@@ -28,7 +29,7 @@ const DivFrase = styled.div`
 
     p{
         font-family: Verdana, Geneva, Tahoma, sans-serif;
-        font-size: 1.6rem;
+        font-size: 1.3rem;
         text-align: right;
         color: #666;
         margin-top: 2rem;
