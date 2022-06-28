@@ -1,5 +1,7 @@
 import styled from "@emotion/styled";
+import { useState } from "react";
 import queryApi from "./helpers/queryAp";
+import ContainerFrase from "./components/Frase";
 const Containerbutton = styled.div`
 display: flex;
 align-items: center;
@@ -12,18 +14,26 @@ const Boton = styled.button`
   background-size: 300px;
   font-family: Arial, Helvetica, sans-serif;
   color: #fff;
-  margin-top: 3rem;
+  margin-top: 1rem;
   padding: 1rem 3rem;
   font-size: 2rem;
   border: 2px solid black;
 `;
 function App() {
- 
+  const [frase, setFrase] = useState({});
+
+  const getApi = async () => {
+    const  frase  = await queryApi()
+    setFrase(frase);
+  }
+
   return (
     <>
       <Containerbutton>
-        <Boton
-          onClick={queryApi}
+        <ContainerFrase
+          frase={frase}
+        />
+        <Boton onClick={getApi}
         >
           Obtener Frase
         </Boton>
